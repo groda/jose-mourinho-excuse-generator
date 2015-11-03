@@ -31,7 +31,7 @@ function myCtrl($scope, $http) {
             $scope.items = data;
             $scope.dataLength = $scope.items.length;
             $scope.rndArr=[$scope.getRnd(),$scope.getRnd(),$scope.getRnd()];
-            $scope.rndExc=$scope.items[$scope.rndArr[0]][0]+ $scope.items[$scope.rndArr[1]][1] +$scope.items[$scope.rndArr[2]][2];
+            $scope.rndExc=$scope.items[$scope.rndArr[0]][0]+ " " + $scope.items[$scope.rndArr[1]][1] + " " + $scope.items[$scope.rndArr[2]][2];
         }).error(function (data, status, headers, config) {
             console.log("something went wrong");
         });

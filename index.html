@@ -30,7 +30,7 @@ function myCtrl($scope, $http) {
             console.log("success");
             $scope.items = data;
             $scope.dataLength = $scope.items.length;
-            $scope.rndArr=[$scope.getRnd($scope.dataLength),$scope.getRnd($scope.dataLength),$scope.getRnd($scope.dataLength)];
+            $scope.rndArr=[$scope.getRnd(),$scope.getRnd(),$scope.getRnd()];
             $scope.rndExc=$scope.items[$scope.rndArr[0]][0]+ " " + $scope.items[$scope.rndArr[1]][1] + " " + $scope.items[$scope.rndArr[2]][2];
         }).error(function (data, status, headers, config) {
             console.log("something went wrong");
@@ -38,8 +38,8 @@ function myCtrl($scope, $http) {
 
     });
     
-    $scope.getRnd = function (l) {
-        return Math.floor(Math.random()*l);
+    $scope.getRnd = function () {
+        return Math.floor(Math.random()*13);
     };      
 
 }

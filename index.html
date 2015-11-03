@@ -29,6 +29,9 @@ function myCtrl($scope, $http) {
         success(function (data, status, headers, config) {
             console.log("success");
             $scope.items = data;
+            $scope.dataLength = $scope.items.length;
+            $scope.rndArr=[$scope.getRnd(),$scope.getRnd(),$scope.getRnd()];
+            $scope.rndExc=$scope.items[$scope.rndArr[0]][0]+ $scope.items[$scope.rndArr[1]][1] +$scope.items[$scope.rndArr[2]][2];
         }).error(function (data, status, headers, config) {
             console.log("something went wrong");
         });
@@ -61,7 +64,7 @@ function myCtrl($scope, $http) {
         
  
        
-        <h2>{{items[getRnd()][0]}} {{items[getRnd()][1]}} {{items[getRnd()][2]}}</h2>
+        <h2>{{rndExc}}</h2>
   
     
     </div>
